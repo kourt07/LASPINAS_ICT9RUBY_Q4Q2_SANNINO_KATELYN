@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>QUIZ II</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">;;;
+
+</head>
+<body>
+
+	<style>
+		
+		button{
+            }
+			.list{
+				display:flex;
+		}
+	</style>
+
+
+<center> <h1>SCORE ANALYZER</h1> <center>
+	<br>
+
+	<div class="container">
+	  
+	    <details ontoggle="message1()">
+	        <summary>
+	            <u>Click Me!</u>
+	            <br>
+	            <i id="message")> </i>
+	        </summary>
+	    </details>
+	</div>
+
+	<script>
+	function message1(){
+	    document.getElementById("message").innerHTML = "Enter your grades in the following subjects.";
+	}
+</script>
+
+<br>
+<br>
+    
+
+    <div class="row">
+
+  <div class="column">
+    <img src="eng.jpg" alt="e" width="100">
+    <textarea class="form-control" id="gradeInput" rows="1"></textarea>
+  </div>
+
+  <div class="column">
+    <img src="maths.jpg" alt="m" width="100">
+    <textarea class="form-control" id="gradeInput" rows="1"></textarea>
+  </div>
+
+  <div class="column">
+    <img src="science.png" alt="s" width="100">
+    <textarea class="form-control" id="gradeInput" rows="1"></textarea>
+  </div>
+</div>
+
+<br>
+<br>
+
+
+    <button class="btn btn-danger mb-3" onclick="checkGrade()">Get Rating</button>
+
+    <div id="result" class="alert d-none" role="alert"></div>
+  
+
+  <script>
+    function checkGrade() {
+      const grade = parseFloat(document.getElementById('gradeInput').value);
+      const result = document.getElementById('result');
+
+      let message = '';
+      let alertClass = 'alert-success';
+
+      if (grade >= 94 && grade <= 100) {
+        message = 'Excellent';
+      } else if (grade >= 87 && grade <= 93.99) {
+        message = 'Above Satisfactory';
+      } else if (grade >= 80 && grade <= 86.99) {
+        message = 'Satisfactory';
+      } else if (grade >= 75 && grade <= 79.99) {
+        message = 'Needs Improvement';
+      } else if (grade >= 70 && grade <= 74.99) {
+        message = 'Poor';
+        alertClass = 'alert-danger';
+      } else {
+        message = 'Invalid or too low grade.';
+        alertClass = 'alert-danger';
+      }
+
+
+</script>
+
+<center> <h4> <i> NOTE: Grading Critieria and equivalents can vary depending on school or district. <i> </h4> </center>
+
+
+</body>
+</html>
